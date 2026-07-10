@@ -1466,11 +1466,10 @@ footer{
 
     
 .hero{
-    min-height:100vh;
+    height:100vh;
     background-size:cover;
     background-repeat:no-repeat;
-    background-position:65% center;
-
+    background-position:center;
 }
     .hero-content h1{
         font-size:42px;
