@@ -1464,11 +1464,13 @@ footer{
 
     /* HERO */
 
-    .hero{
-        padding:120px 25px 60px;
-        background-position:center;
-    }
-
+    
+   .hero{
+    height:100vh;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+}
     .hero-content h1{
         font-size:42px;
         line-height:1.2;
