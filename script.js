@@ -20,7 +20,6 @@ function typeHero(){
 }
 
 setTimeout(typeHero,800);
-console.log("Script loaded!");
 // ============================
 // Fade Up Animation
 // ============================
@@ -116,20 +115,6 @@ document
     .getElementById("contact")
     .scrollIntoView({
         behavior:"smooth"
-    });
-
-});
-// ============================
-// Room Buttons
-// ============================
-
-const roomButtons = document.querySelectorAll(".book-room");
-
-roomButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-
     });
 
 });
@@ -513,7 +498,8 @@ document.querySelector(".nav-links");
 
 menuToggle.addEventListener("click",()=>{
 
-    navMenu.classList.toggle("active");
+    const isOpen = navMenu.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", isOpen);
 
 });
 document.querySelectorAll(".nav-links a").forEach(link=>{
@@ -521,6 +507,27 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
     link.addEventListener("click",()=>{
 
         navMenu.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+
+    });
+
+});
+
+/*==========================
+   KEYBOARD SUPPORT FOR
+   CUSTOM BUTTON CONTROLS
+===========================*/
+
+document.querySelectorAll('[role="button"]').forEach(control => {
+
+    control.addEventListener("keydown", (e) => {
+
+        if(e.key === "Enter" || e.key === " "){
+
+            e.preventDefault();
+            control.click();
+
+        }
 
     });
 
